@@ -289,8 +289,13 @@
 							}
 
 							if ( this.getContentElement( 'youtubePlugin', 'chkResponsive').getValue() === true ) {
-								content += '<div style="position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;">';
-								responsiveStyle = 'style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"';
+								if (editor.config.youtube_classes) {
+									content += '<div class="'+editor.config.youtube_classes[0]+'">';
+									responsiveStyle = 'class="'+editor.config.youtube_classes[1]+'">';
+								} else {
+									content += '<div style="position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;">';
+									responsiveStyle = 'style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"';
+								}
 							}
 
 							if ( this.getContentElement( 'youtubePlugin', 'chkOlderCode' ).getValue() === true )
